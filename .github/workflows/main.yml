@@ -1,4 +1,4 @@
-name: build
+name: build and scan image
 on:
   push:
     branches:
