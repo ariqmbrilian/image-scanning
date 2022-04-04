@@ -30,13 +30,12 @@ jobs:
 
       - name: Build an image from Dockerfile
         run: |
-          docker build -t docker.io/ariqmbrilian/private-image:${{ github.sha }} .
+          docker build -t docker.io/my-organization/my-app:${{ github.sha }} .
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@2a2157eb22c08c9a1fac99263430307b8d1bc7a2
         with:
-          image-ref: 'docker.io/ariqmbrilian/private-image:fbf40fd4c58dc44d69b4a09f84e1d407fc1f442f'
-          #image-ref: 'docker.io/ariqmbrilian/private-image:${{ github.sha }}'
+          image-ref: 'docker.io/my-organization/my-app:${{ github.sha }}'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
