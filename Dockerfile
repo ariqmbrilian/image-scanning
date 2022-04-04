@@ -4,5 +4,5 @@
 #RUN chmod +x /entrypoint.sh
 #ENTRYPOINT ["/entrypoint.sh"]
 #FROM alpine:latest
-FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS base
-#FROM nginx:latest
+#FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS base
+FROM nginx:latest
